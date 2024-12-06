@@ -12,7 +12,6 @@
   "dependencies": {
     "netlify-cms-app": "^2.15.72",
     "nuxt": "^3.14.1592",
-    "snipcart": "^0.0.1",
     "vue": "latest",
     "vue-router": "latest",
     "vuetify": "^3.7.0-beta.1"
