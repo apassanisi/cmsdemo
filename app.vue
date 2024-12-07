@@ -1,16 +1,12 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-    <div v-html="aboutContent.body"></div>
+    <h1>{{ title }}</h1>
+    <p>{{ copy }}</p>
+    <img :src="img" alt="Image" />
   </div>
 </template>
 
 <script setup>
-useHead({
-  script: [
-    { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" },
-  ],
-});
-const { data: aboutContent } = await useContent('about').fetch()
+const about = await queryContent(`/about`).find();
+const { title, copy, img } = about[0];
 </script>

@@ -3,20 +3,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   css: ['@/assets/css/tailwind.css'],
-  head: {
-    script: [
-      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
-    ],
+  app: {
+    head: {
+      script: [
+        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
+      ],
+    },
   },
+  modules: ['@nuxt/content', 'vuetify-nuxt-module'],
   build: {
     transpile: ['vuetify'],
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
-    },
   },
 })
